@@ -11,13 +11,13 @@
         <script>
             function priceCalculator() {
                 var typeMultiplier = document.getElementById("type").value;
-                var warrantyMultiplier = document.getElementById("warranty").value;
+                var supportMultiplier = document.getElementById("support").value;
                 var monthlyDuration = document.getElementById("duration").value;
 
                 if (isNaN(monthlyDuration) || monthlyDuration < 1 || monthlyDuration > 12) {
                     document.getElementById("price").innerHTML = "Monthly duration is not valid" ;
                 } else { 
-                    var price = 24.99 * parseInt(typeMultiplier) * parseInt(warrantyMultiplier) * parseInt(monthlyDuration);
+                    var price = 24.99 * parseInt(typeMultiplier) * parseInt(supportMultiplier) * parseInt(monthlyDuration);
                     document.getElementById("price").innerHTML = price.toFixed(2) ; ;
                 }
             }
@@ -39,8 +39,8 @@
                     </select>
                 </div>
                 <div class="col-sm-4">
-                    <label for="warranty">Support Plan:</label>
-                    <select id="warranty" class="form-control">
+                    <label for="support">Support Plan:</label>
+                    <select id="support" class="form-control">
                         <option value="1">Basic</option>
                         <option value="3">Plus</option>
                         <option value="5">Full</option>
@@ -54,7 +54,7 @@
             </div>
             <div class="row">
                 <div class="col center-block text-center py-5">
-                    <button type="button" class="btn btn-primary btn-lg" onclick="priceCalculator()">Calculate</button>
+                    <button id="calculate" type="button" class="btn btn-primary btn-lg" onclick="priceCalculator()">Calculate</button>
                 </div>
             </div>
             <div class="row">
