@@ -10,10 +10,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script>
             function priceCalculator() {
-                document.getElementById("price").style.display = "none";
-                document.getElementById("loader").style.display = "inline";
-                setTimeout(function(){ document.getElementById("price").style.display = "inline";
-                document.getElementById("loader").style.display = "none";}, 3000);
+                document.getElementById("price").classList.add('d-none');
+                document.getElementById("loader").classList.remove('d-none');
+                setTimeout(function(){ document.getElementById("price").classList.remove('d-none');
+                document.getElementById("loader").classList.add('d-none');}, 3000);
                 var typeMultiplier = document.getElementById("type").value;
                 var supportMultiplier = document.getElementById("support").value;
                 var monthlyDuration = document.getElementById("duration").value;
@@ -25,6 +25,8 @@
                     document.getElementById("price").innerHTML = price.toFixed(2) ; ;
                 }
             }
+
+
 
     </script>
 </head>
@@ -67,8 +69,12 @@
         <div class="col center-block text-center py-5">
             <h1 id="price">Price not calculated yet</h1>
         </div>
-        <div id="loader" class="col center-block text-center py-5" style="display:none;">
-            <h1>Calculating</h1>
+    </div>
+    <div id="loader" class="row d-none">
+        <div class="col center-block text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
     </div>
 </div>
