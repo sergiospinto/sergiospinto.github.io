@@ -25,9 +25,13 @@
                     document.getElementById("price").innerHTML = price.toFixed(2) ; ;
                 }
             }
-
-
-
+            $(function(){
+              $('.container').keypress(function(e){
+                if(e.which == 13) {
+                  document.getElementById("calculate").click();
+                }
+              })
+            })
     </script>
 </head>
 <body>
