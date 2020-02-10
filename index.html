@@ -19,7 +19,7 @@
                 var monthlyDuration = document.getElementById("duration").value;
 
                 if (isNaN(monthlyDuration) || monthlyDuration < 1 || monthlyDuration > 12) {
-                    alert("Monthly duration is not valid");
+                    confirm("Monthly duration is not valid");
                 } else {
                     var price = 24.99 * parseInt(typeMultiplier) * parseInt(supportMultiplier) * parseInt(monthlyDuration);
                     document.getElementById("price").innerHTML = price.toFixed(2) ; ;
